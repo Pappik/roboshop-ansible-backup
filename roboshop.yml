@@ -1,4 +1,5 @@
 - name: Roboshop architecture
   hosts: all
+  become: yes
   roles:
     - "{{ROLE_NAME}}"
