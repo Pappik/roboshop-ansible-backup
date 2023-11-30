@@ -6,7 +6,7 @@
 
 - name: Install Rabbitmq server
   ansible.builtin.yum:
-    name: rabbitmq
+    name: rabbitmq-server
     state: installed
 
 - name: Install Rabbitmq server
