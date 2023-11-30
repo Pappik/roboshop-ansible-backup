@@ -26,5 +26,5 @@
 - name: Mongodb systemd
   ansible.builtin.systemd:
     name: mongod
-    eanbled: yes
+    enabled: yes
     state: restarted
