@@ -49,9 +49,9 @@
 - name: Copy Mongodb repo file
   ansible.builtin.template:
     src: mongo.repo
-    dest: //etc/yum.repos.d/mongo.repo
+    dest: /etc/yum.repos.d/mongo.repo
 
-- name: Install Nodejs
+- name: Install mongodb client
   ansible.builtin.yum:
     name: mongodb-org-shell
     state: installed
