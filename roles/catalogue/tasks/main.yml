@@ -1,7 +1,8 @@
 - name: Disable Nodejs and enable Nodejs:18
-  ansible.builtin.shell:
-    - dnf module disable nodejs
-    - dnf module enable nodejs:18
+  ansible.builtin.shell: dnf module disable nodejs
+
+- name: Disable Nodejs and enable Nodejs:18
+  ansible.builtin.shell: dnf module enable nodejs:18
 
 - name: Install Nodejs
   ansible.builtin.yum:
