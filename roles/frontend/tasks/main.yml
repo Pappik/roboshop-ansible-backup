@@ -2,8 +2,12 @@
   ansible.builtin.yum:
     name: nginx
     state: installed
-    enable: yes
-    start: yes
+
+- name: Systemd nginx
+  ansible.builtin.systemd_service:
+    state: started
+    name: nginx
+    enabled: yes
 
 - name: Clear html contents of nginx
   ansible.builtin.file:
