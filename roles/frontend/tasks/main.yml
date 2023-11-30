@@ -22,8 +22,8 @@
 
 - name: Copy Config file to destination
   ansible.builtin.template:
-    src: catalogue.service
-    dest: /etc/nginx/default.d/catalogue.service
+    src: roboshop.conf
+    dest: /etc/nginx/default.d/roboshop.conf
 
 - name: Make sure a Nginx service unit is running
   ansible.builtin.systemd:
