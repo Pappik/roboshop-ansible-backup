@@ -20,7 +20,7 @@
     dest: /tmp/frontend.zip
 
 - name: Copy Config file to destination
-  ansible.builtin.file:
+  ansible.builtin.copy:
     src: /files/roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
 
