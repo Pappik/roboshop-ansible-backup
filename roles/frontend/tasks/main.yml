@@ -3,24 +3,31 @@
     name: nginx
     state: installed
 
-- name: Systemd nginx
-  ansible.builtin.systemd_service:
-    state: started
-    name: nginx
-    enabled: yes
-
-- name: Clear html contents of nginx
+- name: Remove Http directory
   ansible.builtin.file:
-    path: /usr/share/nginx/html/
+    path: /usr/share/nginx/html
     state: absent
 
-- name: Download frontend files
-  ansible.builtin.get_url:
-    url: https://roboshop-artifacts.s3.amazonaws.com/frontend.zip
+- name: Create Http directory
+  ansible.builtin.file:
+    path: /usr/share/nginx/html
+    state: directory
+
+
+- name: Unarchive frontend files
+  ansible.builtin.unarchive:
+    src: https://roboshop-artifacts.s3.amazonaws.com/frontend.zip
     dest: /tmp/frontend.zip
+    remote_src: yes
 
 - name: Copy Config file to destination
-  ansible.builtin.copy:
-    src: /roles/frontend/files/roboshop.conf
+  ansible.builtin.template:
+    src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
 
+- name: Make sure a Nginx service unit is running
+  ansible.builtin.systemd:
+    name: nginx
+    enabled: yes
+    state: restarted
+    daemon-reload: yes
