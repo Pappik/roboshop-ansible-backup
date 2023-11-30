@@ -39,7 +39,7 @@
     src: "{{component}}.service"
     dest: /etc/systemd/system/{{component}}.service
 
-- name: Make sure a Nginx service unit is running
+- name: Make sure a {{component}} service unit is running
   ansible.builtin.systemd:
     name: "{{component}}"
     enabled: yes
