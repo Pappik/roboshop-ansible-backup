@@ -11,7 +11,7 @@
 
 - name: Install Rabbitmq server
   ansible.builtin.systemd:
-    name: rabbitmq
+    name: rabbitmq-server
     enabled: yes
     state: restarted
 
