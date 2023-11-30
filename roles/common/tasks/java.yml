@@ -7,7 +7,7 @@
   ansible.builtin.include_tasks: "app-req.yml"
 
 - name: Clean packages maven
-  ansible.builtin.shell: mvn clean package
+  ansible.builtin.shell: mvn clean package; mv target/shipping-1.0.jar shipping.jar
   args:
     chdir: /app
 

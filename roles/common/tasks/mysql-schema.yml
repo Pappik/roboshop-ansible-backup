@@ -1,6 +1,8 @@
 - name: Install MYSQL client
   ansible.builtin.yum:
-    name: mysql
+    name:
+    - mysql
+    - python3-PyMySQL
     state: installed
 
 - name: Load Mysql schema
