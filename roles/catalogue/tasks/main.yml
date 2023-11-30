@@ -2,3 +2,8 @@
   ansible.builtin.include_role:
     name: common
     tasks_from: nodejs
+
+- name: Import common role and nodejs task
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: mongodb
