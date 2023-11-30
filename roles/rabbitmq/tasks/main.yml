@@ -1,0 +1,27 @@
+- name: Configure yum repos
+  ansible.builtin.shell: curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | bash
+
+- name: Configure yum repos
+  ansible.builtin.shell: curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | bash
+
+- name: Install Rabbitmq server
+  ansible.builtin.yum:
+    name: rabbitmq
+    state: installed
+
+- name: Install Rabbitmq server
+  ansible.builtin.systemd:
+    name: rabbitmq
+    enabled: yes
+    state: restarted
+
+- name: Add a Rabbitmq user and Pass
+  community.rabbitmq.rabbitmq_user:
+    user: roboshop
+    password: roboshop123
+    vhost: /
+    configure_priv: .*
+    read_priv: .*
+    write_priv: .*
+    state: present
+    tags: administrator
