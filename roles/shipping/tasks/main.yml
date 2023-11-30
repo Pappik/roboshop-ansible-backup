@@ -1,5 +1,4 @@
 - name: Import common role and nodejs task
   ansible.builtin.include_role:
     name: common
-    tasks_from: nodejs
-
+    tasks_from: java
