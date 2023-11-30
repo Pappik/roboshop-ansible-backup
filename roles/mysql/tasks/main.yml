@@ -13,10 +13,10 @@
 
 - name: Make sure mysql running
   ansible.builtin.systemd:
-    name: mysql
+    name: mysqld
     daemon-reload: yes
     enabled: yes
     state: restarted
 
-- name: Disable mysql
+- name: change mysql root password
   ansible.builtin.shell: mysql_secure_installation --set-root-pass RoboShop@1
