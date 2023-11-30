@@ -10,7 +10,7 @@
     state: installed
 
 - name: Import app-pre-req task
-  ansible.builtin.include_tasks: app-req.yml
+  ansible.builtin.include_tasks: "app-req.yml"
 
 
 - name: Install NPM dependencies
@@ -19,7 +19,7 @@
     state: latest
 
 - name: Import systemd task
-  ansible.builtin.include_tasks: systemd.yml
+  ansible.builtin.include_tasks: "systemd.yml"
 
 
 - name: Import schema task

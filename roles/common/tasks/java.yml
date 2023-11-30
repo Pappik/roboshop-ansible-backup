@@ -4,7 +4,7 @@
     state: installed
 
 - name: Import app-requirements task
-  ansible.builtin.include_tasks: app-req.yml
+  ansible.builtin.include_tasks: "app-req.yml"
 
 - name: Clean packages maven
   ansible.builtin.shell: mvn clean package
@@ -12,7 +12,7 @@
     chdir: /app
 
 - name: Import systemd task
-  ansible.builtin.include_tasks: systemd.yml
+  ansible.builtin.include_tasks: "systemd.yml"
 
 - name: Import Mysql schema task
   ansible.builtin.include_tasks: "{{schema_type}}-schema.yml"
