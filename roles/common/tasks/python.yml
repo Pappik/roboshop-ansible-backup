@@ -1,0 +1,22 @@
+- name: Install Python3.6
+  ansible.builtin.yum:
+    name:
+      - python36
+      - gcc
+      - python3-devel
+    state: installed
+
+- name: Import app-requirements task
+  ansible.builtin.include_tasks: "app-req.yml"
+
+- name: Download dependencies
+  ansible.builtin.shell: pip3.6 install -r requirements.txt
+  args:
+    chdir: /app
+
+- name: Import systemd task
+  ansible.builtin.include_tasks: "systemd.yml"
+
+- name: Import Mysql schema task
+  ansible.builtin.include_tasks: "{{schema_type}}-schema.yml"
+  when: schema_load
