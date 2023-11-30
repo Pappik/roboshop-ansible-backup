@@ -42,9 +42,10 @@
 - name: Make sure a {{component}} service unit is running
   ansible.builtin.systemd:
     name: "{{component}}"
+    daemon-reload: yes
     enabled: yes
     state: restarted
-    daemon-reload: yes
+
 
 - name: Copy Mongodb repo file
   ansible.builtin.template:
