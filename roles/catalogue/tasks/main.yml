@@ -56,9 +56,9 @@
     name: mongodb-org-shell
     state: installed
 
-- name: Load shcema to Mongodb
+- name: Load schema to Mongodb
   community.mongodb.mongodb_shell:
     login_host: mongodb-dev.pappik.online
-    file: "/app/schema/{{component}.js"
+    file: "/app/schema/{{component}}.js"
     idempotent: yes
 
