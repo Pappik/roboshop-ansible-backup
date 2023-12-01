@@ -1,4 +1,6 @@
 - name: Create parameters in AWS SSM parameter store
+  host: localhost
+  connection: local
   community.aws.ssm_parameter:
     name: "{{item.name}}"
     value: "{{item.value}}"
