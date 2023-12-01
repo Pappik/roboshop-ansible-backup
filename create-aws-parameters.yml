@@ -1,0 +1,7 @@
+- name: Create parameters in AWS SSM parameter store
+  community.aws.ssm_parameter:
+    name: "{{item.name}}"
+    value: "{{item.value}}"
+    region: us-east-1
+    loop:
+      - {name: "hi", value: "hello USA"}
