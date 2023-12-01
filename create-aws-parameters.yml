@@ -7,7 +7,7 @@
         name: "{{ item.name }}"
         value: "{{ item.value }}"
         region: us-east-1
-        loop:
+      loop:
           - { name: "hi", value: "hello USA" }
 
 
