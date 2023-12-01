@@ -3,9 +3,9 @@
   connection: local
   tasks:
     - name: create aws parameters
-      community.aws.aws.ssm_parameter:
-        name: "{{item.name}}"
-        value: "{{item.value}}"
+      community.aws.ssm_parameter:
+        name: "{{ item.name }}"
+        value: "{{ item.value }}"
         region: us-east-1
         loop:
           - { name: "hi", value: "hello USA" }
