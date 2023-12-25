@@ -9,12 +9,6 @@
     name: rabbitmq-server
     state: installed
 
-- name: Install Rabbitmq server
-  ansible.builtin.systemd:
-    name: rabbitmq-server
-    enabled: yes
-    state: restarted
-
 - name: Add a Rabbitmq user and Pass
   community.rabbitmq.rabbitmq_user:
     user: roboshop
@@ -25,3 +19,10 @@
     write_priv: .*
     state: present
     tags: administrator
+
+- name: Make rabbitmq up n running
+  ansible.builtin.systemd:
+    name: rabbitmq-server
+    daemon-reload: yes
+    enabled: yes
+    state: restarted
