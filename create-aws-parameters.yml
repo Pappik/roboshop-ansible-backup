@@ -27,7 +27,9 @@
         - {name: "dev.payment.DB_HOST", value: "mysql-dev.pappik.online" }
         - { name: "dev.user.MONGO", value: "true" }
         - { name: "dev.user.MONGO_URL", value: "mongodb://mongodb-dev.pappik.online:27017/users" }
-        - { name: "dev.user.REDIS_HOST", value: "redis-dev.pappik.online" }
+
+        - { name: "dev.shipping.CART_ENDPOINT", value: "cart-dev.pappik.online:8080" }
+        - { name: "dev.shipping.DB_HOST", value: "mysql-dev.pappik.online" }
 
 
     ## Passwords should never be held in these repos, should be created manually but for the lab purpose we are creating them here
