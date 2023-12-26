@@ -11,7 +11,7 @@
         - {name: "dev.cart.REDIS_HOST", value: "redis-dev.pappik.online" }
         - {name: "dev.cart.CATALOGUE_HOST", value: "catalogue-dev.pappik.online" }
         - {name: "dev.catalogue.MONGO", value: "true" }
-        - {name: "dev.catalogue.MONGO_URL", value: "mongodb://mongodb-dev.pappikr.in:27017/catalogue" }
+        - {name: "dev.catalogue.MONGO_URL", value: "mongodb://mongodb-dev.pappik.online:27017/catalogue" }
         - {name: "dev.frontend.CATALOGUE_URL", value: "http://catalogue-dev.pappik.online:8080/" }
         - {name: "dev.frontend.USER_URL", value: "http://user-dev.pappik.online:8080/" }
         - {name: "dev.frontend.CART_URL", value: "http://cart-dev.pappik.online:8080/" }
